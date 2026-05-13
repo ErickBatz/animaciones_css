@@ -1,0 +1,217 @@
+:root {
+    --bg-color: #0f111a; /* Negro profundo azulado */
+    --surface-color: #1a1d29; /* Gris muy oscuro para tarjetas */
+    --text-color: #e6edf3; /* Gris muy claro para lectura */
+    --text-muted: #8b949e;
+    --navy-blue: #1f6feb; /* Azul brillante para contrastar en oscuro */
+    --dark-brown: #8d6e63; /* Café claro para resaltar en oscuro */
+    --border-color: #30363d;
+    --code-bg: #0d1117; /* Fondo tipo GitHub Dark */
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Header & Nav */
+header {
+    background-color: #000;
+    color: white;
+    padding: 4rem 0;
+    border-bottom: 2px solid var(--navy-blue);
+}
+
+.header-content h1 {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #fff;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+nav {
+    background-color: rgba(15, 17, 26, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.5rem 0;
+}
+
+nav .nav-link {
+    color: var(--text-muted) !important;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+nav .nav-link:hover {
+    color: var(--navy-blue) !important;
+}
+
+/* Main Content */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+section {
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+h2 {
+    color: var(--navy-blue);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--dark-brown);
+}
+
+h3 {
+    color: var(--dark-brown);
+    font-weight: 600;
+    margin-top: 2rem;
+}
+
+/* Code Blocks - FIXING READABILITY */
+.code-block {
+    background-color: var(--code-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    overflow-x: auto;
+    box-shadow: inset 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.code-block pre {
+    margin: 0;
+    color: #c9d1d9; /* Blanco hueso para máximo contraste */
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 1rem;
+    tab-size: 4;
+}
+
+/* Estilo para los tags de código dentro de texto */
+code:not(pre code) {
+    background-color: #21262d;
+    color: #ff7b72; /* Color café/rojizo suave para destacar */
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    font-size: 0.9em;
+}
+
+/* Conclusion & Tips */
+.conclusion-box {
+    background-color: var(--surface-color);
+    border-left: 5px solid var(--dark-brown);
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 0 8px 8px 0;
+}
+
+.conclusion-box h4 {
+    color: var(--dark-brown);
+    margin-bottom: 1rem;
+}
+
+/* Texto Muted - Incrementando brillo para legibilidad */
+.text-muted {
+    color: #b0b8c1 !important;
+}
+
+/* Pilares de Transición (dt/dd) */
+dt {
+    color: var(--navy-blue);
+    font-weight: 700;
+}
+
+dd {
+    color: #c9d1d9;
+    margin-bottom: 1rem;
+}
+
+/* Tip de experto - Mejorando contraste */
+.expert-tip {
+    background-color: rgba(31, 111, 235, 0.15);
+    border: 1px solid rgba(31, 111, 235, 0.4);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 3rem 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.expert-tip p {
+    color: #e6edf3 !important; /* Texto principal brillante */
+    font-size: 1.05rem;
+}
+
+.expert-tip h3 {
+    margin-top: 0;
+    color: #60a5fa; /* Azul más claro para resaltar */
+}
+
+/* Tables */
+.table {
+    color: var(--text-color) !important;
+    border-color: var(--border-color) !important;
+}
+
+.table thead th {
+    background-color: var(--surface-color) !important;
+    color: var(--navy-blue) !important;
+    border-bottom: 2px solid var(--navy-blue) !important;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    color: #fff !important;
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: var(--text-muted);
+    text-align: center;
+    padding: 5rem 0;
+    border-top: 1px solid var(--border-color);
+}
+
+footer strong {
+    color: #fff;
+}
+
+/* Layout for Advantages */
+.grid-article {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    border-radius: 12px;
+    height: 100%;
+}
+
+.list-group-item {
+    background-color: transparent !important;
+    color: var(--text-color) !important;
+    border-color: var(--border-color) !important;
+}

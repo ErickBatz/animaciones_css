@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guía teórica completa sobre Animaciones, Transiciones y Transformaciones en CSS3. Aprende conceptos clave para el desarrollo web moderno.">
+    <meta name="author" content="Erick Batz">
+    <title>Documentación: Animaciones CSS - Erick Batz</title>
+    
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Estilos y Fuentes -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="py-5">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold">Guía Teórica: Animaciones y Transformaciones CSS</h1>
+            <p class="subtitle lead">Dominando el movimiento en la web con estándares modernos</p>
+        </div>
+    </header>
+
+    <nav class="sticky-top shadow-sm">
+        <div class="container">
+            <ul class="nav justify-content-center py-2">
+                <li class="nav-item"><a class="nav-link" href="#intro">Introducción</a></li>
+                <li class="nav-item"><a class="nav-link" href="#ventajas">Ventajas</a></li>
+                <li><a class="nav-link" href="#transiciones">Transiciones</a></li>
+                <li><a class="nav-link" href="#transformaciones">Transformaciones</a></li>
+                <li><a class="nav-link" href="#keyframes">@Keyframes</a></li>
+                <li><a class="nav-link" href="#animaciones">Animaciones</a></li>
+                <li><a class="nav-link" href="#resumen">Resumen</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <!-- SECCIÓN 1: INTRODUCCIÓN -->
+        <section id="intro">
+            <h2 class="h3">1. ¿Qué son las Animaciones CSS?</h2>
+            <p>
+                Las animaciones en CSS son técnicas que permiten cambiar gradualmente el estilo y aspecto visual de los
+                elementos HTML, pasando de un estado a otro o a través de múltiples fotogramas clave, sin usar
+                JavaScript. Permiten crear movimientos, transiciones complejas y efectos visuales, como cambiar color,
+                tamaño o posición, mejorando significativamente la experiencia del usuario.
+            </p>
+        </section>
+
+        <!-- SECCIÓN 2: VENTAJAS Y USOS -->
+        <section id="ventajas">
+            <h2 class="h3">2. Ventajas y Usos Principales</h2>
+            <div class="row g-4 mt-2">
+                <div class="col-md-6">
+                    <article class="grid-article">
+                        <h3 class="h5 fw-bold mb-3">Ventajas Clave</h3>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item px-0"><strong>Rendimiento superior:</strong> Procesamiento por GPU.</li>
+                            <li class="list-group-item px-0"><strong>Control creativo:</strong> Animación de casi cualquier propiedad.</li>
+                            <li class="list-group-item px-0"><strong>Experiencia UX:</strong> Interacciones más naturales y fluidas.</li>
+                            <li class="list-group-item px-0"><strong>Mantenimiento:</strong> Código limpio y desacoplado.</li>
+                        </ul>
+                    </article>
+                </div>
+                <div class="col-md-6">
+                    <article class="grid-article">
+                        <h3 class="h5 fw-bold mb-3">Usos Frecuentes</h3>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item px-0">Efectos Hover en botones y tarjetas.</li>
+                            <li class="list-group-item px-0">Transiciones suaves de estados.</li>
+                            <li class="list-group-item px-0">Micro-interacciones de carga (spinners).</li>
+                            <li class="list-group-item px-0">Efectos de entrada y salida (Fade/Slide).</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+
+            <div class="conclusion-box">
+                <h4>Conclusión</h4>
+                <p class="mb-0">
+                    Las animaciones en CSS son fundamentales porque transforman una web estática en una experiencia visual atractiva. Al no depender de JavaScript, la web se siente más rápida y fluida.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: TRANSICIONES -->
+        <section id="transiciones">
+            <h2 class="h3">3. Transiciones en CSS</h2>
+            <p>
+                Una transición es el cambio suave de un estado a otro. Sin ella, los cambios son instantáneos;
+                con ella, el navegador interpola los valores intermedios para una percepción de movimiento fluido.
+            </p>
+
+            <h3 class="h5 mt-4 fw-bold">Los 4 Pilares de la Transición</h3>
+            <dl class="row mt-3">
+                <dt class="col-sm-4">transition-property</dt>
+                <dd class="col-sm-8">¿Qué propiedad cambia? (ej: <code>opacity</code>).</dd>
+
+                <dt class="col-sm-4">transition-duration</dt>
+                <dd class="col-sm-8">Duración del cambio (ej: <code>0.3s</code>).</dd>
+
+                <dt class="col-sm-4">transition-timing-function</dt>
+                <dd class="col-sm-8">Aceleración (<code>linear</code>, <code>ease</code>, etc.).</dd>
+
+                <dt class="col-sm-4">transition-delay</dt>
+                <dd class="col-sm-8">Espera inicial.</dd>
+            </dl>
+
+            <article id="ejemplo-transicion" class="mt-4">
+                <h3 class="h5 fw-bold">Ejemplo Práctico Shorthand</h3>
+                <div class="code-block">
+                    <pre><code>.boton {
+    background-color: #3498db;
+    transition: background-color 0.4s ease;
+}
+
+.boton:hover {
+    background-color: #2ecc71;
+}</code></pre>
+                </div>
+            </article>
+
+            <div class="conclusion-box">
+                <h4>Conclusión</h4>
+                <p class="mb-0">
+                    Las transiciones son herramientas vitales para el control del flujo visual. Evitan los "golpes" de color y forma, logrando que cada interacción se perciba orgánica y pulida.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: TRANSFORMACIONES -->
+        <section id="transformaciones">
+            <h2 class="h3">4. Transformaciones (Transform)</h2>
+            <p>
+                La propiedad <code>transform</code> no afecta al flujo del documento. El elemento "flota" sobre su propio espacio sin mover a sus vecinos.
+            </p>
+
+            <div class="row g-4 mt-2">
+                <div class="col-md-6">
+                    <article class="grid-article">
+                        <h3 class="h5 fw-bold mb-3">Tipos de Transformaciones</h3>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item px-0"><strong>translate:</strong> Desplazar posición.</li>
+                            <li class="list-group-item px-0"><strong>rotate:</strong> Girar el elemento.</li>
+                            <li class="list-group-item px-0"><strong>scale:</strong> Cambiar tamaño.</li>
+                            <li class="list-group-item px-0"><strong>skew:</strong> Inclinar la geometría.</li>
+                        </ul>
+                    </article>
+                </div>
+
+                <div class="col-md-6">
+                    <article class="grid-article">
+                        <h3 class="h5 fw-bold mb-3">Combinación Maestra</h3>
+                        <div class="code-block m-0">
+                            <pre><code>.caja:hover {
+    transform: translateY(-10px) scale(1.1);
+    transition: transform 0.3s ease;
+}</code></pre>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="conclusion-box">
+                <h4>Conclusión</h4>
+                <p class="mb-0">
+                    Transform otorga movimiento sin afectar el layout general. Es ideal para botones, tarjetas e iconos, siempre acompañándose de transiciones para un efecto profesional.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: @KEYFRAMES -->
+        <section id="keyframes">
+            <h2 class="h3">5. El Guion: @keyframes</h2>
+            <p>
+                Define los estados de la animación. Puedes usar <code>from</code> e <code>to</code>, o porcentajes para control absoluto.
+            </p>
+            <div class="code-block">
+                <pre><code>@keyframes mi-animacion {
+  0%   { transform: scale(1); background: #1f6feb; }
+  50%  { transform: scale(1.2); background: #8d6e63; }
+  100% { transform: scale(1); background: #1f6feb; }
+}</code></pre>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 6: PROPIEDADES DE ANIMATION -->
+        <section id="animaciones">
+            <h2 class="h3">6. El Reproductor: Propiedades de Animation</h2>
+            <p>Asigna el guion a un elemento con parámetros de control:</p>
+            <dl class="row mt-3">
+                <dt class="col-sm-4">animation-name</dt>
+                <dd class="col-sm-8 text-muted">Nombre del <code>@keyframes</code>.</dd>
+                <dt class="col-sm-4">animation-duration</dt>
+                <dd class="col-sm-8 text-muted">Ciclo completo (ej: <code>2s</code>).</dd>
+                <dt class="col-sm-4">animation-iteration-count</dt>
+                <dd class="col-sm-8 text-muted">Repeticiones (ej: <code>infinite</code>).</dd>
+                <dt class="col-sm-4">animation-direction</dt>
+                <dd class="col-sm-8 text-muted"><code>normal</code>, <code>reverse</code> o <code>alternate</code>.</dd>
+            </dl>
+
+            <article class="mt-4">
+                <h3 class="h5 fw-bold">Ejemplo Aplicado (Shorthand)</h3>
+                <div class="code-block">
+                    <pre><code>.pulsar {
+  animation: latir 1s ease-in-out infinite alternate;
+}
+
+@keyframes latir {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}</code></pre>
+                </div>
+            </article>
+
+            <div class="conclusion-box">
+                <h4>Conclusión</h4>
+                <p class="mb-0">
+                    Las animaciones son más complejas; requieren definir parámetros en @keyframes y luego vincularlos en la propiedad animation para controlar el momento y tipo de ejecución.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 7: RESUMEN COMPARATIVO -->
+        <section id="resumen">
+            <h2 class="h3">7. Resumen de Clase: ¿Cuándo usar qué?</h2>
+            <div class="table-responsive">
+                <table class="table table-hover border mt-3">
+                    <thead>
+                        <tr>
+                            <th>Técnica</th>
+                            <th>Cuándo usarla</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Transición</strong></td>
+                            <td>Cambios simples activados por el usuario (ej: hover).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Transformación</strong></td>
+                            <td>Para mover, rotar o escalar la geometría del elemento.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Animación</strong></td>
+                            <td>Movimientos complejos que pueden repetirse eternamente.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="expert-tip shadow-lg">
+                <h3 class="h5 fw-bold">💡 Tip de experto</h3>
+                <p class="mb-0 text-muted">
+                    Las animaciones consumen más recursos que las transiciones. Úsalas con sabiduría; si llenas tu página de movimientos excesivos, el rendimiento del dispositivo se verá afectado.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-5">
+        <div class="container">
+            <p><strong>Erick Batz</strong> | Programación Web | Desarrollo de Software</p>
+            <p class="copyright small">&copy; 2026 Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>erechos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

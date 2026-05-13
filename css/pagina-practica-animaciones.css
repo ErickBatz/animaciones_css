@@ -1,0 +1,22 @@
+/* TRANSICIONES */
+.btn-transicion {
+    /* Estilos iniciales */
+    background-color: #657b89;
+    /* Azul */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+
+    /* LA CLAVE: La transición */
+    /* Propiedad | Duración | Curva de tiempo */
+    transition: background-color 3s ease;
+}
+
+/* Estado final al pasar el cursor */
+.btn-transicion:hover {
+    background-color: #4b0ee6;
+    /* Cambia a verde */
+}
