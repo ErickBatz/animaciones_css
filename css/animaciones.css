@@ -1,0 +1,67 @@
+/*cramos las animaciones para nuestra pagina*/
+@keyframes flotar{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+.card-animation{
+   width: 200px;
+    margin-top: 20px;
+    background-color: aliceblue;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: flotar 3s ease-in infinite;
+}
+.card-animation img{
+    width: 100%;
+    display: block;
+}
+.card-content-animation{
+    padding: 10px;
+    font-family: sans-serif;
+}
+
+@keyframes aparicionPulso{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+.card-opacity{
+   width: 200px;
+    margin-top: 20px;
+    background-color: aliceblue;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   
+}
+.card-opacity img{
+    width: 100%;
+    display: block;
+}
+.card-content-opacity{
+    padding: 10px;
+    font-family: sans-serif;
+}
+.texto-pulso{
+  font-family: sans-serif;
+  font-size: 20px;
+  color: #333;
+  text-align: center;
+  margin-top: 50px;
+  
+  animation: aparicionPulso 2s ease infinite;
+}

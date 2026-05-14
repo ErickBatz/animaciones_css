@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practica de animaciones en CSS</title>
-    <link rel="stylesheet" href="css/pagina-practica-animaciones.css">
+    <link rel="stylesheet" href="css/trasiciones.css">
+    <link rel="stylesheet" href="css/transformaciones.css">
+    <link rel="stylesheet" href="css/animaciones.css">
 </head>
 
 <body>
@@ -13,29 +15,92 @@
         <h1>Pagina de practica de animaciones en CSS</h1>
     </header>
     <nav></nav>
-    <main>
-        <section>
+    <main class="container">
+        <section class="row">
             <header>
                 <h2>Transiciones</h2>
             </header>
-            <div>
+            <div class="col-3">
                 <button class="btn-transicion">
                     Este es Un boton xd
                 </button>
             </div>
-            <div>
+            <div class="col-3">
                 <button class="btn-transicion-2">
                     Este es un segund boton
                 </button>
             </div>
         </section>
 
-        <section>
-            <div class="card">
+        <section class="row">
+            <div class="card col-2">
                 <img src="image/card-user.webp" alt="Preview">
                 <div class="card-content">
                     <h3>Proyecto Full Stack</h3>
                     <p>Explorando las transiciones de CSS para mejorar la UX.</p>
+                </div>
+            </div>
+            <div class="card-2 col-2">
+                <img src="image/user-anime.jpg" alt="user">
+                <div class="card-content-2">
+                    <h3>Erick Rene Batz Morales</h3>
+                    <p>Esta es otra prueba de transiciones para mejorar la UX</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <header>
+                <h2>Ejemplo de Tranformaciones</h2>
+            </header>
+            <div class="card-tran">
+                <img src="image/caro.avif" alt="image">
+                <div class="card-content-tran">
+                    <h2>Ejemplo de Rotacion</h2>
+                    <p>Este es un ejemplo de elementos y tranfomaciones</p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="card-tran-2">
+                <img src="image/caro.avif" alt="" class="image-scale">
+                <div class="card-content-tran-2">
+                    <h2>Otro card de ejemplo utilizando la propiedad Scale</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum voluptate aperiam pariatur laboriosam consectetur illo dolore ab itaque libero ipsam eligendi quo iste enim, accusamus mollitia harum totam provident placeat?</p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="card-tran-3">
+                <img src="image/caro.avif" alt="">
+                <div class="card-content-tran-3">
+                    <h2>Otro card de ejemplo utilizando la propiedad transform</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum voluptate aperiam pariatur laboriosam consectetur illo dolore ab itaque libero ipsam eligendi quo iste enim, accusamus mollitia harum totam provident placeat?</p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <header>
+                <h2>Ejemplos Utilizando Animation</h2>
+            </header>
+            <div class="card-animation">
+                <img src="image/caro.avif" alt="">
+                <div class="card-content-animation">
+                    <h2>Ejemplo con Animation</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero esse aliquid nobis, deserunt id maxime explicabo quisquam itaque, corrupti hic pariatur possimus. Omnis ipsum, earum quis incidunt dolorum amet deleniti!
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="card-opacity">
+                <img src="image/caro.avif" alt="">
+                <div class="card-content-opacity">
+                    <h2>Ejemplo con Animation</h2>
+                    <p class="texto-pulso">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero esse aliquid nobis, deserunt id maxime explicabo quisquam itaque, corrupti hic pariatur possimus. Omnis ipsum, earum quis incidunt dolorum amet deleniti!
+                    </p>
                 </div>
             </div>
         </section>

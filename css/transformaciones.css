@@ -1,0 +1,77 @@
+/*Estos son ejemplos de como usar tranformaciones*/
+.card-tran{
+    width: 200px;
+    margin-top: 20px;
+    background-color: aliceblue;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    cursor:pointer;
+}
+.card-tran:hover{
+    transform: rotate(10deg);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+.card-tran img{
+    width: 100%;
+    display: block;
+}
+.card-content-tran{
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+
+/*creamos una segunda card para urilizar scale en la propiedad tranform*/
+.card-tran-2{
+    width: 200px;
+    margin-top: 20px;
+    background-color: aliceblue;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    cursor:pointer;
+}
+.card-tran-2:hover{
+    transform: scale(1.1);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.card-tran-2 img{
+    width: 100%;
+    display: block;
+}
+.card-content-tran-2{
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+/*creamos un tercer card para la funcion translate*/
+.card-tran-3{
+    width: 200px;
+    margin-top: 20px;
+    background-color: aliceblue;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    transition: all 0.5s ease;
+    cursor:pointer;
+}
+.card-tran-3:hover{
+    transform:translate(30px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.card-tran-3 img{
+    width: 100%;
+    display: block;
+}
+.card-content-tran-3{
+    padding: 20px;
+    font-family: sans-serif;
+}
