@@ -20,3 +20,57 @@
     background-color: #4b0ee6;
     /* Cambia a verde */
 }
+
+.btn-transicion-2 {
+    background-color: blueviolet;
+    color: white;
+    padding: 10px 15px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 3s ease;
+}
+
+.btn-transicion-2:hover {
+    background-color: #ea08f2;
+}
+
+
+
+.card {
+    width: 200px;
+    margin-top: 20px;
+    background-color: #41ad25;
+    border-radius: 15px;
+    overflow: hidden;
+    /* Para que la imagen no se salga de las esquinas redondeadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    /* EL SECRETO: Definimos la transición desde el estado inicial */
+    /* Animamos 'transform' para el tamaño y 'box-shadow' para la profundidad */
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    cursor: pointer;
+}
+
+/* Estado al pasar el cursor */
+.card:hover {
+    /* scale(1.05) aumenta el tamaño un 5%. 
+     No uses valores muy altos (como 1.5) porque se verá brusco */
+    transform: scale(1.05);
+
+    /* Aumentamos la sombra para dar efecto de que la card "flota" hacia el usuario */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos extra para la imagen */
+.card img {
+    width: 100%;
+    display: block;
+}
+
+.card-content {
+    padding: 20px;
+    font-family: sans-serif;
+}
