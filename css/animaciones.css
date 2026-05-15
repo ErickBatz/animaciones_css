@@ -1,17 +1,20 @@
 /*cramos las animaciones para nuestra pagina*/
-@keyframes flotar{
-    0%{
+@keyframes flotar {
+    0% {
         transform: translateY(0);
     }
-    50%{
+
+    50% {
         transform: translateY(-20px);
     }
-    100%{
+
+    100% {
         transform: translateY(0);
     }
 }
-.card-animation{
-   width: 200px;
+
+.card-animation {
+    width: 200px;
     margin-top: 20px;
     background-color: aliceblue;
     border-radius: 15px;
@@ -19,49 +22,109 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     animation: flotar 3s ease-in infinite;
 }
-.card-animation img{
+
+.card-animation img {
     width: 100%;
     display: block;
 }
-.card-content-animation{
+
+.card-content-animation {
     padding: 10px;
     font-family: sans-serif;
 }
 
-@keyframes aparicionPulso{
-    0%{
+@keyframes aparicionPulso {
+    0% {
         opacity: 0;
     }
-    50%{
+
+    50% {
         opacity: 1;
     }
-    100%{
+
+    100% {
         opacity: 0;
     }
 }
-.card-opacity{
-   width: 200px;
+
+.card-opacity {
+    width: 200px;
     margin-top: 20px;
     background-color: aliceblue;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-   
+
 }
-.card-opacity img{
+
+.card-opacity img {
     width: 100%;
     display: block;
 }
-.card-content-opacity{
+
+.card-content-opacity {
     padding: 10px;
     font-family: sans-serif;
 }
-.texto-pulso{
-  font-family: sans-serif;
-  font-size: 20px;
-  color: #333;
-  text-align: center;
-  margin-top: 50px;
-  
-  animation: aparicionPulso 2s ease infinite;
+
+.texto-pulso {
+    font-family: sans-serif;
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+    margin-top: 50px;
+
+    animation: aparicionPulso 2s ease infinite;
+}
+
+/* Loader Animado */
+.loader-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    margin: 20px auto;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--surface-color, #1a1d29);
+    border-top: 5px solid var(--navy-blue, #1f6feb);
+    border-radius: 50%;
+    animation: girar 1s linear infinite;
+    filter: drop-shadow(0 0 10px rgba(31, 111, 235, 0.4));
+}
+
+.loader-text {
+    margin-top: 15px;
+    color: var(--text-muted, #8b949e);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    animation: parpadeo 1.5s ease-in-out infinite;
+}
+
+@keyframes girar {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes parpadeo {
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }
